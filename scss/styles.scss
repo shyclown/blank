@@ -1,0 +1,54 @@
+@import 'reset';
+@import 'variables';
+@import 'mixins';
+
+@import 'toppanel';
+@import 'mainpanel';
+@import 'sidepanel';
+@import 'footerpanel';
+
+// variable
+
+// mixin
+
+//reset
+html, body{
+  margin: 0 0;
+  padding: 0 0;
+  font-family: 'Open Sans Condensed', sans-serif;
+
+  font-size: 1rem;
+}
+
+#pageGrid{
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 6rem auto 3rem;
+  grid-template-areas:
+  "header"
+  "main"
+  "footer"
+}
+
+#homeSquares{
+
+  width: 100%;
+  display: grid;
+  grid-row-gap: 1px;
+  grid-column-gap: 1px;
+  grid-template-columns: 200px 200px 200px 200px;
+  grid-template-rows: 200px 200px 200px 200px;
+  grid-template-areas:
+  "a b c d"
+  "e f g h"
+  "i j k l";
+
+  .home-square{
+    border: 1px solid $gray;
+  }
+}
+
+#sidebar{}
+#main{}
+#footer{}

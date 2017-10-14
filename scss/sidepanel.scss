@@ -1,0 +1,75 @@
+#sidePanel{
+  // fixed panel
+  grid-area: sidebar;
+  position: relative;
+
+
+  .fixed{
+    width: 200px;
+    position: fixed;
+    top: 6rem;
+    left: 0px;
+    z-index: 1;
+  }
+  ul.top{
+    width: 200px;
+    position: fixed;
+    top: 6rem;
+    left: 0px;
+    box-sizing: border-box;
+
+    padding: 0px;
+    margin: 0px;
+    list-style: none;
+
+    background-color: #FFF;
+    border-right: 1px solid $gray;
+    border-bottom: 1px solid $gray;
+  //  box-shadow: 0px 5px 15px 5px rgba(0,0,0, .1);
+    @include clearfix;
+
+    a{
+      display: block;
+      padding: 1rem;
+      line-height: 1rem;
+      font-size: 1rem;
+      color: black;
+      background-color: $sidemenu-color;
+      text-decoration: none;
+      text-transform: uppercase;
+      &:hover{
+        background-color: $primary;
+      }
+    }
+  }
+
+  ul.sub{
+
+
+    padding: 0px;
+    margin: 0px;
+    list-style: none;
+
+    background-color: #EAEAEA;
+    border-bottom: 1px solid #EAEAEA;
+    @include clearfix;
+
+    a{
+      display: block;
+      padding: 0.8rem 1rem 0.8rem 1rem;
+      line-height: 1rem;
+      font-size: 1rem;
+      color: #000;
+      background-color: $sidemenu-sub-color;
+      text-decoration: none;
+      text-transform: uppercase;
+      &:hover{
+        background-color: darken($sidemenu-sub-color, $menu-darken-amount);
+      }
+    }
+  }
+  li{
+    display: block;
+  }
+
+}

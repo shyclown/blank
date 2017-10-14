@@ -1,0 +1,169 @@
+#topPanel {
+  position: fixed;
+  background-color: white;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  z-index: 2;
+  grid-area: header;
+  overflow: hidden;
+  border-bottom: 1px solid #666; }
+  #topPanel ul.maintop {
+    padding: 0px;
+    margin: 0px;
+    list-style: none;
+    background-color: white;
+    border-bottom: 1px solid #e0e0e0; }
+    #topPanel ul.maintop:after {
+      content: "";
+      display: block;
+      clear: both; }
+  #topPanel ul.sub-maintop {
+    padding: 0px;
+    margin: 0px;
+    list-style: none;
+    background-color: white; }
+    #topPanel ul.sub-maintop:after {
+      content: "";
+      display: block;
+      clear: both; }
+  #topPanel li {
+    display: inline-block; }
+  #topPanel a {
+    display: block;
+    padding: 1rem;
+    line-height: 1rem;
+    font-size: 1rem;
+    color: black;
+    background-color: white;
+    text-decoration: none;
+    text-transform: uppercase; }
+    #topPanel a:hover {
+      background-color: #fdd217; }
+
+#mainPanel {
+  grid-area: main;
+  box-sizing: border-box;
+  width: 100%;
+  z-index: 0; }
+  #mainPanel .padded {
+    margin-left: 200px; }
+  #mainPanel .banner {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+    margin: 0.5rem 0rem; }
+    #mainPanel .banner img {
+      display: block; }
+    #mainPanel .banner .info {
+      bottom: 0px;
+      left: 0px;
+      padding: 0.5rem;
+      position: absolute;
+      background-color: rgba(0, 0, 0, 0.3);
+      color: white;
+      font-size: 1rem;
+      text-transform: uppercase; }
+  #mainPanel .textSplit {
+    display: flex;
+    flex-direction: row; }
+    #mainPanel .textSplit .txt {
+      width: 50%;
+      padding: 1rem; }
+    #mainPanel .textSplit .header {
+      text-align: center;
+      vertical-align: middle;
+      font-size: 3rem;
+      text-transform: uppercase; }
+
+#mainPanel img {
+  width: 100%; }
+
+#sidePanel {
+  grid-area: sidebar;
+  position: relative; }
+  #sidePanel .fixed {
+    width: 200px;
+    position: fixed;
+    top: 6rem;
+    left: 0px;
+    z-index: 1; }
+  #sidePanel ul.top {
+    width: 200px;
+    position: fixed;
+    top: 6rem;
+    left: 0px;
+    box-sizing: border-box;
+    padding: 0px;
+    margin: 0px;
+    list-style: none;
+    background-color: #FFF;
+    border-right: 1px solid #e0e0e0;
+    border-bottom: 1px solid #e0e0e0; }
+    #sidePanel ul.top:after {
+      content: "";
+      display: block;
+      clear: both; }
+    #sidePanel ul.top a {
+      display: block;
+      padding: 1rem;
+      line-height: 1rem;
+      font-size: 1rem;
+      color: black;
+      background-color: #FFF;
+      text-decoration: none;
+      text-transform: uppercase; }
+      #sidePanel ul.top a:hover {
+        background-color: #fdd835; }
+  #sidePanel ul.sub {
+    padding: 0px;
+    margin: 0px;
+    list-style: none;
+    background-color: #EAEAEA;
+    border-bottom: 1px solid #EAEAEA; }
+    #sidePanel ul.sub:after {
+      content: "";
+      display: block;
+      clear: both; }
+    #sidePanel ul.sub a {
+      display: block;
+      padding: 0.8rem 1rem 0.8rem 1rem;
+      line-height: 1rem;
+      font-size: 1rem;
+      color: #000;
+      background-color: #EEE;
+      text-decoration: none;
+      text-transform: uppercase; }
+      #sidePanel ul.sub a:hover {
+        background-color: #dfdfdf; }
+  #sidePanel li {
+    display: block; }
+
+#footerPanel {
+  grid-area: footer;
+  background-color: #666; }
+
+html, body {
+  margin: 0 0;
+  padding: 0 0;
+  font-family: 'Open Sans Condensed', sans-serif;
+  font-size: 1rem; }
+
+#pageGrid {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 6rem auto 3rem;
+  grid-template-areas: "header" "main" "footer"; }
+
+#homeSquares {
+  width: 100%;
+  display: grid;
+  grid-row-gap: 1px;
+  grid-column-gap: 1px;
+  grid-template-columns: 200px 200px 200px 200px;
+  grid-template-rows: 200px 200px 200px 200px;
+  grid-template-areas: "a b c d" "e f g h" "i j k l"; }
+  #homeSquares .home-square {
+    border: 1px solid #e0e0e0; }

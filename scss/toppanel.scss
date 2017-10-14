@@ -1,0 +1,50 @@
+
+#topPanel{
+  // fixed panel
+  position: fixed;
+  background-color: white;
+  top: 0px;
+  left:0px;
+  width: 100%;
+  z-index: 2;
+  grid-area: header;
+  overflow: hidden;
+
+  border-bottom: 1px solid $dark-gray;
+
+  ul.maintop{
+    padding: 0px;
+    margin: 0px;
+    list-style: none;
+
+    background-color: $maintop-color;
+    @include clearfix;
+
+    border-bottom: 1px solid $gray;
+  }
+  ul.sub-maintop{
+    padding: 0px;
+    margin: 0px;
+    list-style: none;
+
+    background-color: $sub-maintop-color;
+    @include clearfix;
+  }
+  li{
+    display: inline-block;
+  }
+  a{
+    display: block;
+    padding: 1rem;
+    line-height: 1rem;
+    font-size: 1rem;
+    color: black;
+    background-color: $maintop-a-color;
+    text-decoration: none;
+    text-transform: uppercase;
+    &:hover{
+      background-color: darken($primary, $menu-darken-amount);
+    }
+  }
+
+}

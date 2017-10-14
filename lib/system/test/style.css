@@ -1,0 +1,42 @@
+html, body {
+  margin: 0 0;
+  padding: 0 0;
+  font-family: 'Roboto', sans-serif;
+  font-size: 1rem; }
+input[type="text"], input[type="password"]{ display: block; }
+form{ padding: 1rem; background-color: #EAEAEA; display: block;}
+input{ padding: 0.5rem 0.5rem; }
+button{ padding: 0.5rem 0.5rem; margin-top: 0.5rem; float: right;}
+form:after{ content: ""; display: block; clear: both; }
+
+h1{
+  font-weight: 100;
+}
+h2{
+  font-weight: 300;
+}
+#login{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+
+}
+.line{
+  padding: 0.2rem 1rem;
+  margin: 0.5rem;
+  background-color: white;
+}
+.user .name{
+  font-weight: bold;
+}
+.block{
+  font-size: 1rem;
+
+  background: #EAEAEA;
+  padding: 1rem;
+  margin-bottom: 1rem;
+    padding-top: 0.5rem;
+}
+.block > .line > .key {
+  font-weight: bold;
+}

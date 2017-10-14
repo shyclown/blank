@@ -1,0 +1,52 @@
+#mainPanel{
+  grid-area: main;
+  box-sizing: border-box;
+  width: 100%;
+  
+  z-index: 0;
+  // padded content with sidebar
+  .padded{
+    margin-left: 200px;
+  }
+
+  .banner{
+
+    width: 100%;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+    margin: 0.5rem 0rem;
+    img{
+      display: block;
+    }
+    .info{
+      bottom: 0px;
+      left: 0px;
+      padding: 0.5rem;
+      position: absolute;
+      background-color: rgba(0, 0, 0, 0.3);
+      color: white;
+      font-size: 1rem;
+      text-transform: uppercase;
+    }
+  }
+
+  .textSplit{
+    display: flex;
+    flex-direction: row;
+
+    .txt{
+      width: 50%;
+      padding: 1rem;
+    }
+    .header{
+      text-align: center;
+      vertical-align: middle;
+      font-size: 3rem;
+      text-transform: uppercase;
+    }
+  }
+}
+#mainPanel img{
+  width: 100%;
+}
