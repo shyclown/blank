@@ -3,6 +3,9 @@ require_once('autoload.php');
 $db = new System\Database;
 new System\Session($db);
 new System\Tables($db);
+
+
+
 ?>
 
 <!DOCTYPE html>
@@ -49,7 +52,7 @@ new System\Tables($db);
 
 
     <section id="footerPanel">
-      <?php require "pages/footer.php"?>
+      <?php require "pages/footer.php"; ?>
     </section>
     </div>
 

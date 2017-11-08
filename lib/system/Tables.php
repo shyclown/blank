@@ -79,4 +79,73 @@ private function create_table_file(){
   $this->db->query($sql);
 }
 
+private function create_table_article_file(){
+  $sql = "CREATE TABLE IF NOT EXISTS `ml_article_file` (
+          `id` int(8) NOT NULL AUTO_INCREMENT,
+          `article_id`  int(8) NOT NULL,
+          `file_id` int(8) NOT NULL ,
+          `file_desc` varchar(64) NOT NULL ,
+          PRIMARY KEY (`id`)
+          ) ENGINE=InnoDB
+          DEFAULT CHARSET=utf8 COLLATE=utf8_bin";
+  $this->db->query($sql);
+}
+
+private function create_table_page(){
+  $sql = "CREATE TABLE IF NOT EXISTS `ml_page` (
+          `id` int(8) NOT NULL AUTO_INCREMENT,
+          `name` varchar(32) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
+          `order` int(3),
+          `parent` int(8),
+          `state` int(1) NOT NULL,
+          `date_created` DATETIME NOT NULL,
+          `date_edited` DATETIME NOT NULL,
+          PRIMARY KEY (`id`)
+        ) ENGINE=InnoDB
+        DEFAULT CHARSET=utf8 COLLATE=utf8_bin";
+  $this->db->_mysqli->query($sql);
+}
+
+private function create_table_page_item(){
+  $sql = "CREATE TABLE IF NOT EXISTS `ml_page_item` (
+          `id` int(8) NOT NULL AUTO_INCREMENT,
+          `page_id`  int(8) NOT NULL,
+          `item_id` int(8) NOT NULL ,
+          `type` int(2) NOT NULL ,
+          `order` int(2) NOT NULL ,
+          PRIMARY KEY (`id`)
+          ) ENGINE=InnoDB
+          DEFAULT CHARSET=utf8 COLLATE=utf8_bin";
+  $this->db->query($sql);
+}
+
+private function create_table_folder(){
+  $sql = "CREATE TABLE IF NOT EXISTS `ml_folder` (
+          `id` int(8) NOT NULL AUTO_INCREMENT,
+          `name` varchar(128) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
+          `order` int(3),
+          `parent` int(8),
+          `state` int(1) NOT NULL,
+          `date_created` DATETIME NOT NULL,
+          `date_edited` DATETIME NOT NULL,
+          PRIMARY KEY (`id`)
+        ) ENGINE=InnoDB
+        DEFAULT CHARSET=utf8 COLLATE=utf8_bin";
+  $this->db->_mysqli->query($sql);
+}
+
+
+private function create_table_folder_item(){
+    $sql = "CREATE TABLE IF NOT EXISTS `ml_folder_item` (
+          `id` int(8) NOT NULL AUTO_INCREMENT,
+          `folder_id`  int(8) NOT NULL,
+          `item_id` int(8) NOT NULL ,
+          `type` int(2) NOT NULL ,
+
+          PRIMARY KEY (`id`)
+          ) ENGINE=InnoDB
+          DEFAULT CHARSET=utf8 COLLATE=utf8_bin";
+  $this->db->query($sql);
+}
+
 };

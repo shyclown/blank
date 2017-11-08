@@ -1,8 +1,6 @@
 <?php
-
-//
+// Login page
 require_once($_SERVER['DOCUMENT_ROOT'].'/autoload.php');
-
 
 $db = new System\Database;
 $account = new System\Account($db);
@@ -12,6 +10,36 @@ $cookie = new System\Cookies($db);
 $crypt = new System\Crypt;
 
 //$account->activateAccount('M6o/fW+7SAIy9ZrL5hE1mH$M6DZ0LB8uyC4A');
+
+function sendToken($email, $token){
+  $to = $email;
+  $subject = 'Activation token';
+  $message = '
+  <html>
+  <head>
+    <title>Activate your account by clicking the link bellow</title>
+  </head>
+  <body>
+  <a href="'.$token.'">'.$token.'</a>
+    <p>Here are the birthdays upcoming in August!</p>
+    <table>
+      <tr>
+        <th>Person</th><th>Day</th><th>Month</th><th>Year</th>
+      </tr>
+      <tr>
+        <td>Johny</td><td>10th</td><td>August</td><td>1970</td>
+      </tr>
+      <tr>
+        <td>Sally</td><td>17th</td><td>August</td><td>1973</td>
+      </tr>
+    </table>
+  </body>
+  </html>
+  ';
+  $headers[] = 'MIME-Version: 1.0';
+  $headers[] = 'Content-type: text/html; charset=iso-8859-1';
+  mail($to, $subject, $message, implode("\r\n", $headers));
+}
 
 // Load Remembered User
 if(isset($_COOKIE) && isset($_COOKIE['elephant-id'])){
@@ -23,11 +51,13 @@ if(isset($_SESSION) && isset($_SESSION['user_id'])){
 }
 
 echo $account->getUsername();
+
 // Sign In
 if(isset($_POST['signin'])){
   echo "<h2>SIGN USER</h2>";
   $token = $account->signin(); // receive token
-  // email token
+  // Email token
+  sendToken( $account->getEmail(), $token);
   // debug
   var_dump($token);
 }
@@ -138,7 +168,7 @@ $sessions = $db->query("SELECT * FROM ml_sessions");
   <h4>USERS</h4>
 <?  foreach($users as $user):?>
   <div class="line">
-    <span class="name"><? echo $user['username'];?> </span><span class="email"><? echo $user['email'] ?></span>
+    <span class="name"><? echo $user['username'];?> </span><span class="email"><? echo $user['email'] ?></span> <? echo $user['state'] ?>
   </div>
 <? endforeach;?>
 </div>
