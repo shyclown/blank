@@ -12,9 +12,10 @@ function __construct( Database $db )
   $this->create_table_account();
   $this->create_token_table();
 
+  $this->create_table_folder();
   $this->create_table_article();
   $this->create_table_file();
-
+  $this->create_table_folder_item();
 }
 
 // photos
@@ -131,7 +132,7 @@ private function create_table_folder(){
           PRIMARY KEY (`id`)
         ) ENGINE=InnoDB
         DEFAULT CHARSET=utf8 COLLATE=utf8_bin";
-  $this->db->_mysqli->query($sql);
+  $this->db->query($sql);
 }
 
 

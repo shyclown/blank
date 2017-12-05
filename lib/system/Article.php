@@ -3,8 +3,8 @@ namespace System;
 class Article
 {
 
-  function __construct(){
-    $this->db = new Database;
+  function __construct(Database $db){
+    $this->db = $db;
     $this->error = [];
   }
 

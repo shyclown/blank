@@ -12,7 +12,7 @@ app.controller('mainController',function($http, $scope, $route, $routeParams, $l
   });
 
   new directiveLoader.directiveElement('edit-file-window', {}, function(){}, $scope);
-
+  new directiveLoader.directiveElement('explorer',{},function(){}, $scope);
 
 
 });

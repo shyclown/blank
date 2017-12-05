@@ -1,15 +1,19 @@
 <?php
+namespace System;
 
+// autoload
+require_once($_SERVER['DOCUMENT_ROOT'].'/autoload.php');
 // define globals for DB
-require_once($_SERVER['DOCUMENT_ROOT'].'/define.php');
-$db = new System\Database;
+//require_once($_SERVER['DOCUMENT_ROOT'].'/define.php');
+$db = new Database;
 
 
 if(isset($_GET) && isset($_GET['class']))
 {
   //Read Handle
   $handle = htmlspecialchars($_GET['class']);
-  $class_name = ucfirst ( $handle ); // uppercase first letter
+  // from System
+  $class_name = 'System\\'.ucfirst ( $handle ); // uppercase first letter
   $class = new $class_name($db);
 
   if(isset($_POST)

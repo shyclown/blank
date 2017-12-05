@@ -1,5 +1,5 @@
 /*
-* generates text 
+* generates Lorem Ipsum text  
 *
 */
 app.service('loremIpsum', function($http){

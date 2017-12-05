@@ -1,0 +1,56 @@
+/* blanket covers whole window and centers items horizontaly */
+.blanket{
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  z-index: 10;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.2);
+}
+.window{
+  display: grid;
+  box-sizing: border-box;
+  grid-gap: 0px;
+  grid-template-columns: auto;
+  grid-template-rows: 2rem calc(100% - 4rem) 2rem;
+  overflow: hidden;
+  grid-template-areas:
+  "windowHeader"
+  "windowContent"
+  "windowFooter";
+  background-color: white;
+
+  .header{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  grid-area: windowHeader;
+  line-height: 2rem;
+  padding-left: 0.5rem;
+  }
+  .header .closeBtn{
+    background-color: #FFF;
+    border: none;
+    width: 2rem;
+    text-align: center;
+  }
+  .header .closeBtn:hover{
+    background-color: #EAEAEA;
+    cursor: pointer;
+  }
+  .content{
+    grid-area: windowContent;
+    max-height: 100%;
+  }
+  .footer{
+    padding-left: 1rem;
+    background-color: #EAEAEA;
+    grid-area: windowFooter;
+    line-height: 2rem;
+  }
+}
