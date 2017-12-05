@@ -50,8 +50,7 @@ app.service('Folder',function(Ajax, Shared){
     data.action = 'insert';
     data.state = 0;
     Ajax.call(data, url, function(response){
-      if(callback){ callback(response); }
-      self.select_all();
+      self.select_all(callback);
     });
   }
 

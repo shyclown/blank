@@ -1,0 +1,47 @@
+.explorer{
+  width: 100%;
+  max-width: 750px;
+}
+.explorer.window .header{
+  background-color: $primary;
+}
+
+
+#explorerBody{
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+#folderContent{
+  display: flex;
+  flex-direction: column;
+  min-height: 300px;
+  max-height: 350px;
+
+  width: 100%;
+
+  #addButtons{
+    padding: 0.5rem;
+      border-bottom: 1px solid #EAEAEA;
+      button{
+        border:none;
+        padding: 0.5rem;
+      }
+  }
+  #folderItems{
+    overflow-y: scroll;
+    button.item{
+      width: 100%;
+      text-align: left;
+      background-color: #FFF;
+
+      border: none;
+      i{
+        color:$primary;
+      }
+    }
+    button.item:hover{
+      background-color: #EAEAEA;
+    }
+  }
+}

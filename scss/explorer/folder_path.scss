@@ -1,0 +1,28 @@
+#folderPath{
+  display: flex;
+  flex-direction: row;
+
+  padding: 0.5rem;
+  border-bottom: 1px solid #EAEAEA;
+
+  span{
+    box-sizing: border-box;
+    height: 2rem;
+    line-height: 2rem;
+  }
+  span:hover{
+    background-color: #EAEAEA;
+    cursor: pointer;
+  }
+  #folderAdd{
+    padding-left: 0.5rem;
+    input{
+      height: 2rem;
+      box-sizing: border-box;
+    }
+    button{
+      height: 2rem;
+      box-sizing: border-box;
+    }
+  }
+}

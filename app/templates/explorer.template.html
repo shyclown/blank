@@ -1,24 +1,55 @@
 
 <div class="blanket" ng-click="cancel()">
-  <div class="window shadow" ng-click="$event.stopPropagation()">
+  <div class="explorer window shadow" ng-click="$event.stopPropagation()">
     <div class="header">
      Explorer
      <button class="closeBtn" ng-click="cancel()"><i class="fa fa-times"></i></button>
     </div>
     <div class="content">
-      <!-- PATH -->
-      <div id="explorerPath">
-        <path-to-folder class="row"></path-to-folder>
-        <add-folder></add-folder>
-      </div>
-      <!-- TREE -->
-      <div id="explorerFoldersTree">
-          <folder-tree-line ng-repeat='folder in folders' ng-if='folder.parent == 0'></folder-tree-line>
-      </div>
+        <!-- PATH -->
+        <div id="folderPath">
+          <span ng-click="openFolder(0)">missionlife /</span>
+          <span ng-repeat="parent in currentParents" ng-click="openFolder(parent)">{{parent.name}} /</span>
+          <span ng-if="currentFolder != 0">{{currentFolder.name}}</span>
+          <!-- Add Folder to current Folder -->
+          <div id="folderAdd">
+            <input class="add_folder" ng-model="new_folder.name" placeholder="folderName"/>
+            <button class="save_new folder" ng-click="saveNewFolder()">ADD</button>
+          </div>
+        </div>
+        <!-- EXPLORER BODY -->
+        <div id="explorerBody">
 
+            <!-- LEFT -->
+            <div id="folderTree">
+                <folder-tree-line ng-repeat='folder in folders' ng-if='folder.parent == 0'></folder-tree-line>
+            </div>
+
+            <!-- RIGHT - FOLDER CONTENT -->
+            <div id="folderContent">
+
+            <div id="addButtons" ng-if="isOpenFolder()">
+              <button ng-click="openArticleWindow()"><i class="fa fa-plus"></i> Add Article</button>
+              <button ng-click="openFormWindow()"><i class="fa fa-plus"></i> Add Form</button>
+              <button ng-click="openGarantWindow(false)"><i class="fa fa-plus"></i> Add Garant</button>
+              <button type="file" ng-click=""><i class="fa fa-plus"></i> Add File</button>
+            </div>
+
+            <div id="folderItems" is-drop-area="uploadFile">
+
+              <div ng-repeat="folder in folders" ng-if="(folder.parent == currentFolder.id)" >
+                <button class="item" ng-click="openFolder(folder)"><i class="fa fa-folder yellow"></i> {{folder.name}}</button>
+              </div>
+              <div ng-repeat="article in articles">
+                <button class="item" ng-click="openArticleWindow(article)"><i class="fa fa-file-text-o"></i> {{article.header}} </button>
+              </div>
+            </div>
+
+          </div><!-- FOLDER CONTENT -->
+        </div><!-- EXPLORER BODY-->
     </div><!-- content -->
     <div class="footer">
         Footer
     </div><!-- footer -->
-  </div><!-- window -->
+  </div><!-- explorer window -->
 </div>

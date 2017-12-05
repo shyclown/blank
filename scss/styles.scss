@@ -2,6 +2,12 @@
 @import 'variables';
 @import 'mixins';
 
+// explorer
+
+@import 'explorer/folder_path';
+@import 'explorer/folder_tree';
+@import 'explorer/explorer';
+
 @import 'blanket';
 @import 'toppanel';
 @import 'mainpanel';

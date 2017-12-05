@@ -37,7 +37,10 @@ function( directiveLoader, Folder, Article, Shared ) {
       scope.saveNewFolder = function(){
         let data = scope.new_folder;
         data.parent = scope.currentFolder;
-        Folder.insert( data, function(response){ scope.new_folder.name = ""; });
+        Folder.insert( data, function(response){
+          scope.new_folder.name = "";
+          scope.$apply();
+        });
       }
 
 

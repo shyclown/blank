@@ -1,3 +1,87 @@
+#folderPath {
+  display: flex;
+  flex-direction: row;
+  padding: 0.5rem;
+  border-bottom: 1px solid #EAEAEA; }
+  #folderPath span {
+    box-sizing: border-box;
+    height: 2rem;
+    line-height: 2rem; }
+  #folderPath span:hover {
+    background-color: #EAEAEA;
+    cursor: pointer; }
+  #folderPath #folderAdd {
+    padding-left: 0.5rem; }
+    #folderPath #folderAdd input {
+      height: 2rem;
+      box-sizing: border-box; }
+    #folderPath #folderAdd button {
+      height: 2rem;
+      box-sizing: border-box; }
+
+#folderTree {
+  width: 250px;
+  min-height: 300px;
+  max-height: 350px;
+  overflow-y: scroll;
+  border-right: 1px solid #EAEAEA;
+  padding-right: 0.5rem; }
+  #folderTree .folder {
+    display: block;
+    padding-left: 0.5rem; }
+    #folderTree .folder .line {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      cursor: pointer; }
+      #folderTree .folder .line .edit {
+        text-align: center;
+        width: 1.5rem; }
+      #folderTree .folder .line .edit:hover {
+        background-color: #FBC02D; }
+    #folderTree .folder .line:hover {
+      background-color: #EAEAEA; }
+    #folderTree .folder .line i {
+      color: #666; }
+    #folderTree .folder .line i.yellow {
+      color: #FBC02D; }
+
+.explorer {
+  width: 100%;
+  max-width: 750px; }
+
+.explorer.window .header {
+  background-color: #FBC02D; }
+
+#explorerBody {
+  display: flex;
+  flex-direction: row;
+  width: 100%; }
+
+#folderContent {
+  display: flex;
+  flex-direction: column;
+  min-height: 300px;
+  max-height: 350px;
+  width: 100%; }
+  #folderContent #addButtons {
+    padding: 0.5rem;
+    border-bottom: 1px solid #EAEAEA; }
+    #folderContent #addButtons button {
+      border: none;
+      padding: 0.5rem; }
+  #folderContent #folderItems {
+    overflow-y: scroll; }
+    #folderContent #folderItems button.item {
+      width: 100%;
+      text-align: left;
+      background-color: #FFF;
+      border: none; }
+      #folderContent #folderItems button.item i {
+        color: #FBC02D; }
+    #folderContent #folderItems button.item:hover {
+      background-color: #EAEAEA; }
+
 /* blanket covers whole window and centers items horizontaly */
 .blanket {
   width: 100%;
@@ -86,7 +170,7 @@
     text-decoration: none;
     text-transform: uppercase; }
     #topPanel a:hover {
-      background-color: #fdd217; }
+      background-color: #fab70f; }
 
 #mainPanel {
   grid-area: main;
@@ -162,7 +246,7 @@
       text-decoration: none;
       text-transform: uppercase; }
       #sidePanel ul.top a:hover {
-        background-color: #fdd835; }
+        background-color: #FBC02D; }
   #sidePanel ul.sub {
     padding: 0px;
     margin: 0px;

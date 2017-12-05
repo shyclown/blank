@@ -1,0 +1,39 @@
+#folderTree{
+  width: 250px;
+  min-height: 300px;
+  max-height: 350px;
+  overflow-y: scroll;
+
+
+  border-right: 1px solid #EAEAEA;
+  padding-right: 0.5rem;
+
+
+
+  .folder{
+    display: block;
+    padding-left: 0.5rem;
+    .line{
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      cursor: pointer;
+      .edit{
+        text-align: center;
+        width: 1.5rem;
+      }
+      .edit:hover{
+        background-color: $primary;
+      }
+    }
+    .line:hover{
+      background-color: #EAEAEA;
+    }
+    .line i{
+      color: #666;
+    }
+    .line i.yellow{
+      color: $primary;
+    }
+  }
+}
